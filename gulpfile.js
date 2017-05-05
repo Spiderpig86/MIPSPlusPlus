@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var prop = require('./package.json');
-var minify = require('gulp-minify-css');
 var $ = require('gulp-load-plugins')();
 var head = '\/*\r\n* MIPS++ ' + prop.version + '\r\n* Stanley Lim, Copyright 2017\r\n* https://spiderpig86.github.io/MIPS-\r\n*/\r\n';
 
