@@ -30,6 +30,7 @@
     .eqv PRINT_IEEE 35
 #################################
 # Standard macro functions.
+# All used registers are saved and restored automatically.
 #################################
 
 .data
@@ -173,4 +174,26 @@
         lw $a0, ($sp)
         lw $v0, 4($sp)
         addi $sp, $sp, 8
+    .end_macro
+
+    #################################
+    # Push register value onto the stack.
+    # Type: Void
+    # Arguments:
+    #   %reg = register
+    #################################
+    .macro push(%reg)
+        addi $sp, $sp, -4
+        sw %reg, ($sp)
+    .end_macro
+
+    #################################
+    # Pops register value onto the stack.
+    # Type: Void
+    # Arguments:
+    #   %reg = register
+    #################################
+    .macro push(%reg)
+        lw %reg, ($sp)
+        addi $sp, $sp, 4
     .end_macro
