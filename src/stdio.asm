@@ -44,7 +44,7 @@
     # Arguments:
     #   %label = label in data section
     #################################
-    .macro print_lbl_str(%label)
+    .macro print_mem_str(%label)
         addi $sp, $sp, -8
         sw $a0, ($sp)
         sw $v0, 4($sp)
@@ -64,7 +64,7 @@
     # Arguments:
     #   %label = label in data section
     #################################
-    .macro print_lbl_word(%label)
+    .macro print_mem_word(%label)
         addi $sp, $sp, -8
         sw $a0, ($sp)
         sw $v0, 4($sp)
@@ -84,7 +84,7 @@
     # Arguments:
     #   %label = label in data section
     #################################
-    .macro print_lbl_double(%label)
+    .macro print_mem_double(%label)
         addi $sp, $sp, -12
         sw $f0, ($sp)
         sw $f1, 4($sp)
@@ -105,7 +105,7 @@
     # Type: Void
     # Arguments:
     #   %reg = register with content
-    #   %code = what needs to be printed
+    #   %code = code for associated data-type
     #################################
     .macro printf(%reg, %code)
         addi $sp, $sp, -8
@@ -126,7 +126,7 @@
     # Type: Void
     # Arguments:
     #   %reg = register with content
-    #   %code = what needs to be printed
+    #   %code = print code for associated data-type
     #################################
     .macro println(%reg, %code)
         addi $sp, $sp, -8
