@@ -18,7 +18,7 @@
         sw $v0, 4($sp)
 
         la $a0, log_msg
-        li $v0, PRINT_STRING
+        li $v0, PRINT_STR
         syscall
 
         li $a0, %s
@@ -112,7 +112,7 @@
         sw $a0, ($sp)
         sw $v0, 4($sp)
 
-        move $a0, %src
+        move $a0, %reg
         li $v0, %code
         syscall
 
