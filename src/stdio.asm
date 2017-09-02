@@ -4,7 +4,8 @@
 #################################
 
 # Data section carried over
-    log_msg .asciiz "Console log - "
+    log_msg: .asciiz "Console log - "
+    new_line: .asciiz "\n"
 
     #################################
     # Logs parameter in console.
@@ -137,8 +138,8 @@
         li $v0, %code
         syscall
 
-        li $a0, 11
-        li $v0, PRINT_STRING
+        li $a0, newline
+        li $v0, PRINT_STR
         syscall
 
         lw $a0, ($sp)
