@@ -81,7 +81,7 @@
         sw $v0, 4($sp)
 
         la $a0, %label
-        li $v0, PRINT_STRING
+        li $v0, PRINT_STR
         syscall
 
         lw $a0, ($sp)
@@ -164,11 +164,11 @@
         sw $a0, ($sp)
         sw $v0, 4($sp)
 
-        move $a0, %src
+        move $a0, %reg
         li $v0, %code
         syscall
 
-        li $a0, newline
+        la $a0, new_line
         li $v0, PRINT_STR
         syscall
 
