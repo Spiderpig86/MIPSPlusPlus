@@ -8,7 +8,8 @@ var head = '\/*\r\n* MIPS++ ' + prop.version + '\r\n* Stanley Lim, Copyright 201
 gulp.task('compile', function() {
     return gulp.src([
         './src/consts.asm',
-        './src/stdio.asm'
+        './src/stdio.asm',
+        './src/file.asm'
     ])
         .pipe($.concat('mpp.asm'))
         .pipe($.header(head))

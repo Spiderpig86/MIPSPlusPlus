@@ -3,7 +3,7 @@
 # All used registers are saved and restored automatically.
 #################################
 
-.data
+# Data section carried over
     log_msg .asciiz "Console log - "
 
     #################################
