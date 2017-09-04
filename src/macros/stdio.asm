@@ -168,3 +168,47 @@
         lw %reg, ($sp)
         addi $sp, $sp, 4
     .end_macro
+
+    #################################
+    # Gets length of string
+    # Type: int
+    # Arguments:
+    #   %str = string address from register
+    # Returns:
+    #   $v0 = length of string
+    # @requires mppf.asm
+    #################################
+    .macro str_len(%str)
+        addi $sp, $sp, -8
+        sw $a0, ($sp) # Overrided by function
+        sw $t0, 4($sp)
+
+        move $a0, %str
+        jal func_str_len
+
+        lw $a0, ($sp)
+        lw $t0, 4($sp)
+        addi $sp, $sp, 8
+    .end_macro
+
+    #################################
+    # Gets length of string from memory
+    # Type: int
+    # Arguments:
+    #   %str = string from memory
+    # Returns:
+    #   $v0 = length of string
+    # @requires mppf.asm
+    #################################
+    .macro str_len_mem(%str)
+        addi $sp, $sp, -8
+        sw $a0, ($sp) # Overrided by function
+        sw $t0, 4($sp)
+
+        la $a0, %str
+        jal func_str_len
+
+        lw $a0, ($sp)
+        lw $t0, 4($sp)
+        addi $sp, $sp, 8
+    .end_macro
