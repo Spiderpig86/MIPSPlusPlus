@@ -19,6 +19,7 @@
         func_str_len_loop:
             lb $t1, 0($a0) # Load char
             beqz $t1, func_str_len_loop_end # Reached null terminator
+            beq $t1, 10, func_str_len_loop_end # Reached \n for strings entered in memory with syscall 5
 
             addi $a0, $a0, 1 # Shift the string
             addi $t0, $t0, 1 # Increment the counter
