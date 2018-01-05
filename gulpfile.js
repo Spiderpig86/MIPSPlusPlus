@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var prop = require('./package.json');
 var $ = require('gulp-load-plugins')();
-var head = '#\r\n# MIPS++ ' + prop.version + '\r\n# Stanley Lim, Copyright 2017\r\n# https://spiderpig86.github.io/MIPSPlusPlus\r\n#\r\n';
+var head = '#\r\n# MIPS++ ' + prop.version + '\r\n# Stanley Lim, Copyright 2018\r\n# https://spiderpig86.github.io/MIPSPlusPlus\r\n#\r\n';
 
 gulp.task('compile', ['funcs'], function() {
     return gulp.src('./src/macros/*.asm')

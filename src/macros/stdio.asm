@@ -164,7 +164,7 @@
     # Arguments:
     #   %reg = register
     #################################
-    .macro push(%reg)
+    .macro pop(%reg)
         lw %reg, ($sp)
         addi $sp, $sp, 4
     .end_macro
@@ -214,7 +214,7 @@
     .end_macro
 
     #################################
-    # Calls function while preserving $sp
+    # Calls function while preserving $ra
     # Type: void
     # Arguments:
     #   %func = label to function
