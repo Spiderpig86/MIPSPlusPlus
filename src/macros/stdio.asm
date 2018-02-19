@@ -164,7 +164,7 @@
     # Arguments:
     #   %reg = register
     #################################
-    .macro push(%reg)
+    .macro pop(%reg)
         lw %reg, ($sp)
         addi $sp, $sp, 4
     .end_macro
@@ -211,4 +211,19 @@
         lw $a0, ($sp)
         lw $t0, 4($sp)
         addi $sp, $sp, 8
+    .end_macro
+
+    #################################
+    # Calls function while preserving $ra
+    # Type: void
+    # Arguments:
+    #   %func = label to function
+    #################################
+    .macro call(%func)
+        addi $sp, $sp, -4 # Allocate space to store $ra
+        sw $ra, 0($sp)
+        jal %func
+
+        lw $ra, 0($sp)
+        addi $sp, $sp, 4
     .end_macro
