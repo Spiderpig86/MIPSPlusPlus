@@ -12,9 +12,6 @@
     li $v0, 84
     syscall
     
-    str_len_mem(a_to_i)
-    println($v0, PRINT_INT)
-    
     print_mem_str(a_to_i)
 
     println($v0, PRINT_INT)

@@ -23,3 +23,9 @@
 
     .eqv PRINT_HEX 34
     .eqv PRINT_IEEE 35
+
+    #################################
+    # BOUND VALUES
+    #################################
+    MAX_WORD: .word 0xf0000000
+    MIN_WORD: .word 0x0fffffff
