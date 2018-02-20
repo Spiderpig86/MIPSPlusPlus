@@ -27,5 +27,5 @@
     #################################
     # BOUND VALUES
     #################################
-    MAX_WORD: .word 0xf0000000
-    MIN_WORD: .word 0x0fffffff
+    MAX_WORD: .word 0x80000000
+    MIN_WORD: .word 0x7fffffff
